@@ -1,18 +1,1191 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Hello World!</title>
+	<meta charset="UTF-8">
+	<title>Word Art Final</title>
+	<link rel="shortcut icon" href="https://i.imgur.com/bMdrjk0.png" type="image/ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=IM+Fell+English+SC&family=Montserrat:wght@700&family=Rosarivo:ital@1&display=swap" rel="stylesheet">	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://balkan.app/js/FamilyTree.js"></script>
+
+
+<style>
+/* font-family: 'Estonia', cursive;
+font-family: 'IM Fell English SC', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rosarivo', cursive; */
+
+:root {
+    --dark: #111;
+    --light: #fff;
+    --accent1: #809E9A;
+    --accent2: #CFDEDC;
+    --accent3: #c8cacadd;
+    --main-font: Montserrat,helvetica,sans-serif;
+    --headings: Montserrat,helvetica,sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    color: var(--dark);
+    font-size: 9px;
+    position: relative;
+}
+
+.title-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('https://www.artforum.com/wp-content/uploads/2022/02/article01_large-19.jpg') center center fixed;
+    background-size: cover;
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
+
+.title-screen {
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    z-index: -1;
+}
+
+.title-screen h1 {
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    background-color: #111;
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    white-space: nowrap;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.title-screen h4 {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: #111;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bottom: 30px;
+}
+.definition-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://static.boredpanda.com/blog/wp-content/uploads/2016/12/family-portrait-different-generations-in-one-photo-103-5863b5d9d3751__605.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    z-index: 0;
+}
+
+.definition-screen h1 {
+    font-size: 120px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.369);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bottom: 30px;
+    padding-top:30px;
+}
+
+.definition-screen h4 {
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.577);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    padding-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right:10px;
+    
+}
+.first-screen {
+    height: 100vh;
+    text-align: center;
+    /* background: url('https://media.istockphoto.com/id/533626871/vector/set-of-people-aging.jpg?s=612x612&w=0&k=20&c=RSV0nE2sHN3uU29rUlElxULuSnaazj4Yo9wUIRHkxZg=') center center fixed; */
+    background: url('https://media0.giphy.com/media/3o6Zt0CsF7OvEtNtao/giphy.gif') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+
+}
+
+.first-screen h1 {
+    font-size: 100px;
+    color: rgb(141, 135, 135);
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+.first-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.first-screen h4 {
+    font-size: 18px;
+    color: rgb(141, 135, 135);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.ldor-vdor-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://i.pinimg.com/originals/ae/a7/e2/aea7e2cacf8aa1a88dd632153080823d.gif') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ldor-vdor-screen h1 {
+    font-size: 100px;
+    color: rgb(141, 135, 135);
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 12s steps(40) forwards;
+    margin: 0;
+}
+.ldor-vdor-screen h6 {
+    font-size: 18px; /* Adjust the font size as needed */
+    color: white;
+    background-color:rgba(0, 0, 0, 0.579);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.ldor-vdor-screen h4 {
+    font-size: 100px;
+    color: rgb(141, 135, 135);
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(40) forwards;
+    margin: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.how-to-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://downsizingthehome.files.wordpress.com/2016/02/photo-album.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    z-index: 0;
+}
+
+.how-to-screen h5 {
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.808);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bottom: 30px;
+    padding-top:30px;
+}
+
+.how-to-screen h3 {
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.637);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    padding-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right:10px;
+    /* border: white;
+    border-radius: 2%;
+    border-style: solid; */
+}
+
+.candle-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://i.pinimg.com/originals/d5/75/f9/d575f928344cfa2ad8e5a720c2ff0e7a.gif') center center fixed;
+    /* background: url('https://media0.giphy.com/media/3o6Zt0CsF7OvEtNtao/giphy.gif') center center fixed; */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+
+}
+
+.candle-screen h1 {
+    font-size: 100px;
+    color: rgb(141, 135, 135);
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+.candle-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.maus-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://cdn.prod.www.spiegel.de/images/5efa3e6d-d0ff-45df-8446-215b88c20e67_w960_r1.778_fpx51.98_fpy49.99.jpg') center center fixed;
+    /* background: url('https://media0.giphy.com/media/3o6Zt0CsF7OvEtNtao/giphy.gif') center center fixed; */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+
+}
+.maus-screen h1 {
+    font-size: 100px;
+    color: rgb(141, 135, 135);
+    font-family: 'Estonia', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+.maus-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+
+
+/* Make the items appear when they are in the viewport */
+.container.in-viewport .item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header {
+    padding: 0 0 2vw 0;
+    text-transform: uppercase;
+    font-family: var(--headings);
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: 6px;
+    padding-left: 6px;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 15px;
+    letter-spacing: 4px;
+    padding-left: 4px;
+    color: var(--dark);
+    text-shadow: 1.3px 1.3px .5px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+    .family-tree-screen {
+    margin-top:30px;
+    height: 100vh;
+    text-align: center;
+    /* background: url('https://cdn.prod.www.spiegel.de/images/5efa3e6d-d0ff-45df-8446-215b88c20e67_w960_r1.778_fpx51.98_fpy49.99.jpg') center center fixed; */
+    /* background: url('https://media0.giphy.com/media/3o6Zt0CsF7OvEtNtao/giphy.gif') center center fixed; */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    }
+    .family-tree-screen #tree{
+        overflow-y: auto;
+    }
+
+    .family-tree-screen h5 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.family-tree-screen p {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: left; /* Align text to the left */
+    position: absolute; /* Position the box relative to the container */
+    top: 5px; /* Adjust the top spacing as needed */
+    left: 10px; /* Adjust the left spacing as needed */
+    right:60%;
+    padding: 10px; /* Add padding to the box */
+    background-color: rgba(200, 194, 194, 0.8); /* Set background color with some transparency */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+    #tree {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        /* pointer-events: none; */
+    }
+    .vladek-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://4.bp.blogspot.com/-p2uxkJKwaoE/WRDBHd_bw5I/AAAAAAAAC6w/jz9-SpzfRT0PP3b1X4ZpStUVPSt7CokAACLcB/s1600/Art%2Band%2BVladek.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.vladek-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.art-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://www.nybooks.com/wp-content/uploads/2018/04/180203_Art_Spiegelman_Portraits_010.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.art-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.subtitle-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/A1RUVrZnIhL._AC_UF1000,1000_QL80_.jpg') center bottom fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.subtitle-screen h4 {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.bleeds-screen {
+    height: 100vh;
+    text-align: center;
+    background: url('https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2018/01/28734/image1440x560cropped.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.bleeds-screen h6 {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.levine-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Stroop_Report_-_Warsaw_Ghetto_Uprising_BW.jpg/1200px-Stroop_Report_-_Warsaw_Ghetto_Uprising_BW.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.levine-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.levine2-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://i.gifer.com/ABO1.gif') center top fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.levine2-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.layout-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://i.pinimg.com/originals/bb/de/65/bbde654d92e53871c482cdb0e5837a1a.gif') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.layout-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.juxtaposition-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/juxtaposition.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.juxtaposition-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.parallelism-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/parallelism.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.parallelism-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.wartime-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/wartime.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.wartime-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.laying-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/laying.png') center bottom fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.laying-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.survival-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://encyclopedia.ushmm.org/images/large/0ddc879a-06f1-422e-9656-7114c473f866.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.survival-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.considering-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.considering-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://image.pbs.org/video-assets/ldudMkK-asset-mezzanine-16x9-tJsu1D4.png?focalcrop=1200x630x50x10&format=auto') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.spilling-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/bunker.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.spilling-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.bridge-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/bridge.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.bridge-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.exchange-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('../word-art/assets/img/exchange.png') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exchange-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.barmitzvah-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://www.myjewishlearning.com/wp-content/uploads/2013/06/brit-atid-passing-torah.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.barmitzvah-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.chain-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://catholiccharities-kcsj.org/wp-content/uploads/2019/02/Chains-of-poverty-scaled.jpg') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.chain-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.baby-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://static.wikia.nocookie.net/life-writing-maus/images/5/50/Vladekartanja.jpg/revision/latest?cb=20151129182935') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.baby-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.break-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/23d5d925793789.5634ad6900943.gif') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.break-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+.conclusion-screen{
+    height: 100vh;
+    text-align: center;
+    background: url('https://media.tenor.com/EA6YR9tND6MAAAAd/tree-of-life-malick.gif') center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.conclusion-screen h6{
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.788);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.citations-screen{
+    height: 100vh;
+    text-align: center;
+    background-color: white;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.citations-screen h6{
+    font-size: 11px; /* Adjust the font size as needed */
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    font-weight: lighter;
+    white-space: normal; /* Allow wrapping */
+    text-align: left; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+.citations-screen h3{
+    font-size: 18px; /* Adjust the font size as needed */
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    white-space: normal; /* Allow wrapping */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Adjust the margins as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+}
+
+</style>
 </head>
+
 <body>
-  <h1>Hello World!</h1>
-  <p>1. My name is Meredith Haines, I am a Senior Computer Science Major </p>
-  <p>2. I am interested in learning how to apply my programming knowledge for more creative uses such as frontend web development and design.</p>
-  <p>3. I took a Mobile Software Development class where I programmed android applications such as a calculator using Kotlin.</p>
-  <p>4. I want to become proficient in web languages like HTML and JavaScript and practice keeping the user experience in mind on the frontend.</p>
-  <p>5. The Filesystem- A filesystem defines how files are named, stored, and retrieved from a device. These files are often grouped together in a hierarchical folder structure or "directories" originating at the root and branching out to various paths or file addresses. These files could also come in the form of a program or "application." Programs such as Microsoft Word are often packaged with other files which make up a software package like Microsoft Office. There are a set of permissions attached to each file which control whether the user can view, modify, or run that file. Common file extensions such as ".txt" for plain text, ".doc" for Microsoft Word, and ".html" for HyperText Markup Language are added to the end of a filename so that the user knows what type of file it is and so the operating system knows which applications can open which files. Hidden files exist on a computer, but do not appear when listing or exploring in the Finder. These files are often systems or configuration files hidden by default, but you can find them in the terminal using the -la flag.</p>
-  <p>6. <a href="https://pudding.cool/2020/12/judge-my-spotify/">How Bad is Your Spotify? </a>  - This project connects with your Spotify or Apple Music to evaluate your musical taste. By analyzing your music data, the AI-powered bot provides judgemental opinions on your musical intersts. I like how interactive this project is asking questions along the way.</p>
-  <p> <a href="https://music.apple.com/us/replay">Apple Music Replay </a> - How Bad is Your Spotify reminded me of this program that allows Apple Music users and producers on the platform to view a compilation of data. This data shows your trends and activity on the platform over the past year in a way that can be easily shared and understood on social media.</p>
-  <p> <a href="https://www.memuplay.com/how-to-play-com.photoroulette-on-pc.html ">Photo Roulette </a> - This program accesses the camera roll on you and your friends' devices in a game called Photo Roulette. The program selects random photos and the users compete to guess who each photo belongs to. This game raises some concerns regarding privacy and security as you must grant the program access to your camera roll.</p>
+<h3>To optimize your viewing experience, expand your screen to full-screen mode</h3>
+<section class="scroll-screen title-screen">
+    <h1>Bloodlines of Memory</h1>
+    <h4>Unveiling L'dor V'dor through the pages of Maus</h4>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen definition-screen">
+    <h1>לדור ודור</h1>
+    <h4>There is a Hebrew saying in Judaism -- לדור ודור (transliterated to L'dor v'dor) which literally means "from generation to generation."</h4>
+</section>
+<p>Aarts, Mattie. “A Woman With Her Mother, Grandmother, And Her Daughter.” boredpanda.com.</p>
+
+<section class="scroll-screen ldor-vdor-screen">
+    <h6>The Jewish religion is centered around L'dor V'dor and the importance of making connections between generations while transmitting cultural values, rituals, traditions, and history to the next generation.</h6>
+    <!-- You can add additional content or styling for this screen -->
+</section>
+<p>Unimazi. “Holding Hands Gif Animation.” Unimazi.blogspot.com, 22 September 2020.</p>
+
+<section class="scroll-screen how-to-screen">
+    <h5>Growing up in a Jewish family I was shown at home and at Hebrew School that there are many simple ways that you can honor L’dor V’dor as a family. We can...</h5>
+    <h3>Tell Stories</h3><br>
+    <h3>Pass on Recipes</h3><br>
+    <h3>Share Photos</h3><br>
+    <h3>Celebrate Holidays</h3>
+</section>
+<p>Hetzer, Linda. “My Grandmother’s Photo Album.” The Importance of a Family Photo Album, 19 February 2016.</p>
+
+<section class="scroll-screen first-screen">
+    <h6>Although it is something small we can practice at home, the concept of passing down traditions and teachings from generation to generation, also holds profound significance in the Holocaust narrative.</h6>
+</section>
+<p>Oh, Erick. “Life Cycle Love Gif.” Giphy.</p>
+
+<section class="scroll-screen candle-screen">
+    <h6>L'dor v'dor is not just about knowing the broader history but also understanding and learning from the personal experiences within individual families and communities. This principle emphasizes the duty to remember and transmit the collective memory of the Jewish people, ensuring that the atrocities of the Holocaust are never forgotten. It involves teaching the younger generations about the painful history, the loss of lives, and the resilience of survivors.</h6>
+    <!-- You can add additional content or styling for this screen -->
+</section>
+<p>“Memorial Candle.” Arcadia Apaches Candlelight Memorial, 4 December 2021.</p>
+
+<section class="scroll-screen maus-screen">
+    <h6>Art Spiegelman's Maus embodies the principle of L'dor v'dor by intricately weaving the personal experiences of the Spiegelman family with the broader historical context of the Holocaust, serving as a poignant testament to the duty of remembering and transmitting the collective memory of the Jewish people across generations.</h6>
+</section>
+<p>Lehne, Thomas. “Art Spiegelman on the School Ban of his Book.” Der Spiegel.</p>
+
+<section class="scroll-screen family-tree-screen">
+    <header>
+		<h1>Maus</h1>
+		<h2>Family Tree</h2>
+	</header>
+    <p><b>Instructions: </b><br>
+        Click on family members to learn more, use the search bar for specific individuals, click the clover icon by Anja to switch families, and click and drag to navigate the family tree.</p>
+
+
+<div id="tree"></div>
+
+
+	<!-- start whole -->
+	<script>
+    
+     var chart = new FamilyTree(document.getElementById("tree"), {
+            mouseScrool: FamilyTree.none,
+            siblingSeparation: 120,
+            template: 'john',
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title",
+                img_0: "img",
+            }
+        });
+
+        chart.load([
+            // Grandparents
+            { id: 1, pids: [2], name: "Abram Spiegelman", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'male', bio:'Abram Spiegelman is the father of Vladek. He voluntarily goes to Auschwitz to help his daughter Fela with her four children. He also encourages his sons Vladek and Marcus to starve to lose weight so they are seen as unfit to be drafted.'},
+            { id: 2, pids: [1], name: "Chaja Spiegelman", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'female', bio:'Mother of Vladek, dies of cancer after Vladek is released from the prisoner of war camp.' },
+            { id: 3, pids: [4], name: "Israel Zylberberg", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'male', bio:'Father of Anja, whom Vladek always refers to as “father-in-law.” The wealthy owner of a hosiery factory, Mr. Zylberberg is a devoted family man who does everything he can to protect his wife.'},
+            { id: 4, pids: [3], name: "Matka Zylberberg", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'female', bio: 'Mother of Anja, a religious woman who cares tenderly for her children and grandchildren, and fights to keep her family together amidst the chaos of the war. Mrs. Zylberberg dies in Auschwitz, after Haskel and Jakov Spiegelman refuse to help smuggle her and her husband out of Srodula.'},
+
+            // Parents
+            { id: 5, mid: 2, fid: 1, name: "Fela Spiegelman", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'female', bio:'Fela Spiegelman is the sister of Vladek. She is sent to Auschwitz for having too many children to be able to do slave-labor work'},
+            { id: 6, pids: [8], mid: 2, fid: 1, name: "Vladek Spiegelman", img: "https://images.findagrave.com/photos250/photos/2020/363/220262932_a1356d69-e26d-4600-8082-764e7d10ec06.jpeg", gender: 'male', bio:'A Polish Jew and Holocaust survivor, Vladek is burdened by memories of fear, suffering, and loss that, until beginning his interviews with Artie, he has not addressed in years.'},
+            { id: 7, mid: 2, fid: 1, name: "Marcus Spiegelman", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'male', bio:'Vladek’s brother, who is imprisoned in a labor camp called Blechamer near the beginning of the war. The man who tells Vladek about Marcus’s death refuses to tell him how, exactly, he died.' },
+
+            { id: 8, pids: [6], mid: 4, fid: 3, name: "Anja Zylberberg", img: "https://images.findagrave.com/photos250/photos/2020/363/220262508_d3a4ddd5-27f2-414d-a614-ebcc3466debb.jpeg", gender: 'female',bio:'A sensitive and highly intelligent woman, Anja survives the Holocaust but dies by suicide 1968.' },
+            { id: 9, pids: [11], mid: 4, fid: 3, name: "Herman Zylberberg", img: "https://ahecinfo.org/wp-content/uploads/244190_244190_600011_r01-1024x740.jpg", gender: 'male', bio:'Herman Zylberberg is the brother of Anja who was visiting the United States when World War II began and was able to remain there.' },
+            { id: 10, pids: [12], mid: 4, fid: 3, name: "Tosha Steinkeller", img: "data:image/jpeg;base64,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", gender: 'female', bio:'Tosha Steinkeller, maiden name Zylberberg, is the older sister of Anja. She cares for Richieu before killing the children and herself when the Nazis liquidate the Zawiercie ghetto.'},
+            { id: 11, pids: [9], name: "Helen Zylberberg", img: "https://ahecinfo.org/wp-content/uploads/244190_244190_600011_r01-1024x740.jpg", gender: 'female', bio:'Anja’s sister-in-law. Helen is married to Herman, and is the mother of Lolek and Lonia. Helen and Herman are in New York, visiting the World’s Fair, when the war breaks out. ' },
+            { id: 12, pids: [10], name: "Wolfe Steinkeller", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'male', bio:'Wolfe Steinkeller, husband of Tosha, works for the Jewish Community Organization in Sosnowiec. He thinks the war will be over quickly.' },
+           
+            // Children
+            { id: 14, fid: 6, mid: 8, pids: [19], name: "Art Spiegelman", img: "https://www.illustrationhistory.org/images/made/images/uploads/p01h94yr_580_385_c1.jpg", gender: 'male',bio:'A young Jewish-American man who works to write a comic book about his father’s experience during the Holocaust.' },
+            { id: 15, fid: 6, mid: 8, name: "Richieu Spiegelman", img: "https://images.findagrave.com/photos250/photos/2021/154/220263679_9fed99bf-c6ae-41ec-a7c2-2d5cb114c141.jpeg", gender: 'male', bio:'Vladek and Anja’s firstborn son. Richieu dies during the war, when his Aunt Tosha poisons him to prevent him from being captured by Nazi soldiers during the evacuation of Zawiercie.' },
+            { id: 16, fid: 9, mid: 11, name: "Lolek Zylberberg", img: "https://ahecinfo.org/wp-content/uploads/244190_244190_600011_r01-1024x740.jpg", gender: 'male', bio:'Anja’s nephew. Lolek is the son of Herman and Helen, and older brother of Lonia. Because his parents are abroad when the war breaks out, he stays with Anja and Vladek' },
+            { id: 17, fid: 9, mid: 11, name: "Lonia Zylberberg", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65cnw03NKVP43-9UaqOppeY_0rhuPhk8Sh71LifbOW3oo3FF4VKxO30_BOBGDg4RwnoU&usqp=CAU", gender: 'female', bio:'Anja’s niece. Lonia is the daughter of Herman and Helen, and younger sister of Lolek. Lonia dies during the war, when her Aunt Tosha poisons her to prevent her from being captured by Nazi soldiers during the evacuation of Zawiercie.' },
+            { id: 18, fid: 12, mid: 10, name: "Bibi Zylberberg", img: "https://feedsnitt.com/wp-content/uploads/2017/12/24619655.jpg", gender: 'female', bio:'Anja’s niece, the daughter of Tosha and Wolfe. Bibi dies during the war, when her mother poisons her to prevent her from being captured by Nazi soldiers during the evacuation of Zawiercie.' },
+            { id: 19, pids:[14], name: "Françoise Mouly", img: "https://static.wikia.nocookie.net/marveldatabase/images/b/b6/Francoise_Mouly.jpg/revision/latest?cb=20130910191702", gender: 'female',bio:'Artie’s wife, a French woman who converted to Judaism after her marriage in order to please Vladek. Level-headed and even-tempered, Françoise is often called upon to defuse tension between her husband and father-in-law' }
+        ]);
+    </script>
+</section>
+<section class="scroll-screen vladek-screen">
+    <h6>There are many generations represented in <i>Maus</i> as the story recounts the Holocaust experiences of Vladek Spiegelman, a Polish Jew, and his son Art's struggles to understand his father's past. Vladek shares his harrowing survival story, detailing the impact of the Holocaust on their family and the transmission of generational trauma.</h6>
+</section>
+<p>Thomasg. Art and Vladek Spiegelman mid 1950s.” I Need Art and Coffee, 8 May, 2017.</p>
+
+</section>
+<section class="scroll-screen art-screen">
+    <h6>Art's decision to tell his father's story and depict it graphically in <i>Maus</i> is an active engagement with the concept of "L’dor v’dor." By documenting Vladek's experiences, Art is ensuring that the history and legacy of the Holocaust are not lost but are instead passed down to subsequent generations.</h6>
+</section>
+<p>Dreifus, Claudia. “Drawing Is Always a Struggle: An Interview with Art Spiegelman.” nybooks.com, 13 April, 2018.</p>
+
+</section>
+<section class="scroll-screen subtitle-screen">
+    <h4>The subtitle Art chose for the novel carries profound significance </h4>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen bleeds-screen">
+    <h6>"My Father Bleeds History" signifies the transmission of information and experiences through the bloodline, embodying the essence of L'dor V'dor. It serves as a visceral acknowledgment by Spiegelman that the impact of violence persisted beyond the wartime events, leaving a lasting mark on subsequent generations.</h6>
+</section>
+<p>Gamaraal Foundation. “One gesture, one story”. Nina Weil survived the Theresienstadt and Auschwitz concentration camps. United Nations, 24 January, 2018.</p>
+
+<section class="scroll-screen levine-screen">
+    <h6>In his publication titled “Necessary Stains,” Michael G. Levine guides readers on engaging with Maus, characterizing Art's recording of Vladek's narrative and readers' subsequent exploration of these accounts as a profound "act of belated witnessing," suggesting that as long as future generations bear witness, they become an integral part of the narrative, ensuring the story never dies.</h6>
+</section>
+<p>Konrad, Franz. “Warsaw Ghetto Boy.” Farkash-gallery.com, 6 February, 2018.</p>
+
+<section class="scroll-screen levine2-screen">
+    <h6>Levine coins the term "internal bleeding," akin to Art's "My Father Bleeds History," highlighting how the events in Maus, particularly Vladek's story, aren't isolated; they metaphorically bleed together, forming a continuous and interconnected historical narrative that extends beyond the Holocaust, impacting both present and future generations.</h6>
+</section>
+<p>Botnet, Cama. “Visualization of Internet Usage”, Dec, 2012.</p>
+
+<section class="scroll-screen layout-screen">
+    <h6>The theme of intergenerational continuity is also evident in the layout of the pages of <i>Maus</i> which often serve as a visual metaphor for the ongoing dialogue between generations</h6>
+</section>
+<p>Hodge, Miki. “Page Flipping.” Obscure Book Blog.</p>
+
+<section class="scroll-screen juxtaposition-screen">
+    <h6>The juxtaposition of these two consecutive pages—one featuring Vladek lying stomach down in trenches during army training in 1939 and the next with Art assuming the same position while writing Vladek's story in their living room—profoundly encapsulates the theme of L'dor V'dor</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen parallelism-screen">
+    <h6>The visual parallelism of these two panels suggests a seamless flow of history from father to son, linking their experiences across time</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen wartime-screen">
+    <h6>In Vladek's wartime scene, the visual parallel of him in a defensive position, armed for military training, signifies the survival instincts and strategies developed during a tumultuous period in history</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen laying-screen">
+    <h6>Art assumes the same position as he, in many ways, learns the same survival instincts and strategies from his father’s stories</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen survival-screen">
+    <h6>One specific survival strategy Vladek teaches Art is how to make an underground bunker for protection. The intentional layout of pages in <i>Maus</i> discussing the transmission of practical skills like this one are full of examples of L'dor V'dor</h6>
+</section>
+<p>National Archives and Records Administration. “Holocaust Bunker in Warsaw.” Holocaust Encyclopedia, United States Holocaust Memorial Museum.</p>
+
+<section class="scroll-screen considering-screen">
+    <h6>In “Considering Maus,” a critical exploration of the graphic novel Maus, scholars delve into an interview where Art Spiegelman articulates his approach to the graphic novel. Describing his role, he notes, “I’m literally giving a form to my father’s words and narrative. This form involves panel size, rhythms, and visual structures, ensuring that each page stands as a distinct, significant unit, not merely a sequence of consecutive panels”</h6>
+</section>
+<p>PBS. “An Interview with Art Spiegelman, Author of Maus.” PBS Charlotte, 31 August 2022.</p>
+
+<section class="scroll-screen spilling-screen">
+    <h6>On this page specifically, the fractured frames and spilled content visually symbolize the seamless connection of history across generations, highlighting the ongoing impact of the Holocaust. Vladek's bunker diagram bleeding into the margins serves as a symbolic bridge, representing the transmission of practical skills and survival strategies from Vladek's generation to Art's.</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen bridge-screen">
+    <h6>This bridge can also be seen when Vladek draws the diagram in Art’s notebook before handing the notebook back to Art</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen exchange-screen">
+    <h6>The exchange of the notebook between Art and Vladek mirrors the ritualistic passing of the Torah in a Jewish bar/bat mitzvah ceremony, symbolizing the transmission of knowledge and survival strategies from one generation to the next</h6>
+</section>
+<p>Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.</p>
+
+<section class="scroll-screen barmitzvah-screen">
+    <h6>“L’dor V’dor” is a Jewish principle, but also a beautiful prayer sung during Bar/Bat Mitzvahs when handing the Torah down from grandparents to parents to the child celebrating their entry into adulthood</h6>
+</section>
+<p>Jewish Journey Project. “Alternative Bar and Bat Mitzvah Ceremonies.” My Jewish Learning.</p>
+
+
+<section class="scroll-screen chain-screen">
+    <h6>Much like the Torah's journey through family generations during a bar/bat mitzvah, the notebook becomes a tangible link in the intergenerational chain, embodying the essence of L'dor V'dor</h6>
+</section>
+<p>Morris, Brent. “Breaking the chains of generational poverty.” Catholic Charities, 27 February, 2019.</p>
+
+<section class="scroll-screen baby-screen">
+    <h6><i>Maus</i> encapsulates the profound concept of L'dor V'dor, emphasizing the continuity of Holocaust history and survival strategies passed down from Vladek's generation to Art's to future generations of readers</h6>
+</section>
+<p>Lifewritingmaus. “Art Spiegelman Life.” Life Writing: Maus Wiki.</p>
+
+<section class="scroll-screen break-screen">
+    <h6><i>Maus</i> has faced controversy due to its graphic depiction of the Holocaust. However, banning Maus in schools jeopardizes this vital chain</h6>
+</section>
+<p>Butler, Matthew. “Chain Link Breaking.” behance.net, 4 May, 2015.</p>
+
+<section class="scroll-screen conclusion-screen">
+    <h6>This fracture, in turn, disrupts the transmission of values and experiences crucial for understanding and preserving the collective memory from generation to generation.</h6>
+</section>
+<p>Callofino. “Tree of Life.” tenor.com, 13 February, 2022.</p>
+
+<section class="scroll-screen citations-screen">
+    <h3>Works Cited</h3><br><br>
+    <h6>Geis, Deborah R. “p. 2-3.” Considering Maus: Approaches to Art Spiegelman’s “Survivor’s Tale” of the Holocaust, University of Alabama Press, Tuscaloosa, 2007. <br><br>
+        LEVINE, MICHAEL G. “Necessary Stains: Spiegelman’s ‘MAUS’ and the Bleeding of History.” American Imago, vol. 59, no. 3, 2002, pp. 317–41. JSTOR, http://www.jstor.org/stable/26304674. Accessed 13 Dec. 2023. <br><br>
+        LitCharts. “Maus Characters.” LitCharts, www.litcharts.com/lit/maus/characters. Accessed 13 Dec. 2023. <br><br>
+        Spiegelman, Art. Maus: A Survivor’s Tale. Pantheon Books, 1986.<br><br>
+        </h6>
+</section>
+
 </body>
-<!-- The most difficult part of this assignment was just formatting in HTML since it is still so new to me. Attaching links to an html file is especially confusing because I am unsure whether to use relative URLs or attributes  -->
 </html>
